@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Estilo.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="column" id="todo">
+            <h2 class="red-title">Tareas por hacer</h2>
+            <ul id="todo-list" class="task-list">
+                <!-- Aquí se agregarán las tarjetas de tarea -->
+            </ul>
+        </div>
+        <div class="column" id="in-progress">
+            <h2 class="yellow-title">Tareas Realizándose</h2>
+            <ul id="in-progress-list" class="task-list">
+                <!-- Aquí se agregarán las tarjetas de tarea -->
+            </ul>
+        </div>
+        <div class="column" id="done">
+            <h2 class="green-title">Tareas Finalizadas</h2>
+            <ul id="done-list" class="task-list">
+                <!-- Aquí se agregarán las tarjetas de tarea -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="centered-container">
+        <form id="task-form">
+            <div class="input-container">
+                <input type="text" id="task-input" name="task_name" placeholder="Tarea" required>
+                <input type="text" id="description-input" name="description" placeholder="Descripción">
+                <input type="date" id="date-input" name="date" required>
+                <select id="priority-input" name="priority">
+                    <option value="Urgente">Tarea Urgente</option>
+                    <option value="Secundaria">Tarea Secundaria</option>
+                    <option value="Rutinaria">Tarea Diaria</option>
+                </select>
+                <input type="hidden" name="user_id" value="1"> <!-- Asumiendo un id de usuario de 1 -->
+                <input type="hidden" name="status" value="todo"> <!-- Valor predeterminado para el estado -->
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="addTask()">Añadir</button>
+                <button type="button" onclick="deleteLastTask()">Borrar</button>
+                <button type="submit">Guardar en DB</button> <!-- Nuevo botón para guardar en la base de datos -->
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
